@@ -1,0 +1,17 @@
+packages: .
+
+index-state: 2021-08-18T00:00:00Z
+
+source-repository-package
+  type: git
+  location: https://github.com/amesgen/stuff
+  tag: 5d173a747118880ded6568001c8d0d56b57ac69f
+  subdir: ghc-lib-parser-9.0.1.20210324
+  --sha256: 0qh07100qvxf0bh2rz64n21cz92wc1pj4niy3xs027l8xv52syz2
+source-repository-package
+  type: git
+  location: https://github.com/dmjio/miso
+  tag: 339505587fd8576c7f89484d3a4244732a9f00e6
+  --sha256: 0a3lnjk516v8m0ih5x8cm7m1jqawlbilrlgkk897zfqygigi1c10
+
+allow-newer: jsaddle:lens
