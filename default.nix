@@ -5,7 +5,7 @@ let
       name = "ormolu-live";
       src = ./.;
     };
-    compiler-nix-name = "ghc8105";
+    compiler-nix-name = "ghc8107";
   };
   ormolu-live-js =
     hsPkgs.projectCross.ghcjs.hsPkgs.ormolu-live.components.exes.ormolu-live;
@@ -17,11 +17,12 @@ in {
       src = ./.;
       subDir = "www";
     };
+    buildInputs = [ pkgs.closurecompiler ];
     installPhase = ''
       mkdir -p $out
       find . \( -name '*.html' -o -name '*.css' \) -exec cp {} $out \;
       ORMOLU_LIVE=${ormolu-live-js}/bin/ormolu-live.jsexe
-      ${pkgs.closurecompiler}/bin/closure-compiler \
+      closure-compiler \
         $ORMOLU_LIVE/all.js --externs $ORMOLU_LIVE/all.js.externs \
         -O ADVANCED --jscomp_off=checkVars -W QUIET \
         --js_output_file $out/all.min.js

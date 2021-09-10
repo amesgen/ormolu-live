@@ -16,7 +16,6 @@ import qualified Ormolu.Config as O
 import qualified Ormolu.Parser as O
 import qualified Ormolu.Parser.Result as O
 import qualified Ormolu.Utils as O
-import qualified Relude.Unsafe as RU
 import System.IO.Unsafe (unsafePerformIO)
 import UnliftIO.Exception
 
@@ -147,7 +146,11 @@ viewModel model@Model {..} =
     configCheckbox (cloneLens -> l) = checkbox (^. #config . l) \c -> UpdateConfig $ l .~ c
 
     out = case output of
-      Right t -> pre_ [class_ "is-family-code is-flex-grow-1"] $ tokenToHtml <$> RU.fromJust (tokenizeHaskell t)
+      Right t ->
+        pre_ [class_ "is-family-code is-flex-grow-1"]
+          . maybe (pure . text . ms $ t) (tokenToHtml <$>)
+          . tokenizeHaskell
+          $ t
       Left e ->
         pre_
           [class_ "is-flex-grow-1 content has-background-danger-light has-text-danger-dark"]
