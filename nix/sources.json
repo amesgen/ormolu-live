@@ -5,10 +5,10 @@
         "homepage": "https://input-output-hk.github.io/haskell.nix",
         "owner": "input-output-hk",
         "repo": "haskell.nix",
-        "rev": "e2f77a9873982e6c633fb9de2817a6c800e42c2b",
-        "sha256": "1332wfigvrh6qb9ssgkrfarzm24sf0gg6f73hnm2ydlp8k06607m",
+        "rev": "4ea6346ea40b2d4c4891ef12d3ad082ee6020cd7",
+        "sha256": "1nawbdyc10mqpx879bwf8nljwiia3qfv3qkgc56677s695g87w01",
         "type": "tarball",
-        "url": "https://github.com/input-output-hk/haskell.nix/archive/e2f77a9873982e6c633fb9de2817a6c800e42c2b.tar.gz",
+        "url": "https://github.com/input-output-hk/haskell.nix/archive/4ea6346ea40b2d4c4891ef12d3ad082ee6020cd7.tar.gz",
         "url_template": "https://github.com/<owner>/<repo>/archive/<rev>.tar.gz"
     },
     "niv": {
@@ -17,10 +17,10 @@
         "homepage": "https://github.com/nmattia/niv",
         "owner": "nmattia",
         "repo": "niv",
-        "rev": "e0ca65c81a2d7a4d82a189f1e23a48d59ad42070",
-        "sha256": "1pq9nh1d8nn3xvbdny8fafzw87mj7gsmp6pxkdl65w2g18rmcmzx",
+        "rev": "65a61b147f307d24bfd0a5cd56ce7d7b7cc61d2e",
+        "sha256": "17mirpsx5wyw262fpsd6n6m47jcgw8k2bwcp1iwdnrlzy4dhcgqh",
         "type": "tarball",
-        "url": "https://github.com/nmattia/niv/archive/e0ca65c81a2d7a4d82a189f1e23a48d59ad42070.tar.gz",
+        "url": "https://github.com/nmattia/niv/archive/65a61b147f307d24bfd0a5cd56ce7d7b7cc61d2e.tar.gz",
         "url_template": "https://github.com/<owner>/<repo>/archive/<rev>.tar.gz"
     }
 }

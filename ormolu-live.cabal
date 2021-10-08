@@ -13,19 +13,19 @@ executable ormolu-live
       base
     , relude ^>= 1
     , unliftio ^>= 0.2
-    , ormolu
+    , ormolu ^>= 0.3
     , ghc-lib-parser
     , ghc-syntax-highlighter
-    , miso == 1.7.1.0
+    , miso ^>= 1.8
     , lens ^>= 5.0
     , generic-lens ^>= 2.2
   if !impl(ghcjs)
     build-depends:
-        jsaddle ^>= 0.9.8
-      , jsaddle-warp >= 0.9
-      , websockets ^>= 0.12.7
-      , warp ^>= 3.3.17
-      , wai-app-static ^>= 3.1.7
+        jsaddle ^>= 0.9
+      , jsaddle-warp ^>= 0.9
+      , websockets ^>= 0.12
+      , warp ^>= 3.3
+      , wai-app-static ^>= 3.1
   mixins:
       base hiding (Prelude)
     , relude (Relude as Prelude)

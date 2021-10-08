@@ -177,17 +177,16 @@ viewModel model@Model {..} =
           O.OrmoluNonIdempotentOutput _ -> ["Formatting is not idempotent. Please, consider reporting the bug."]
           O.OrmoluUnrecognizedOpts os ->
             ["The following GHC options were not recognized:", "", toString . unwords . fmap toText . toList $ os]
+          O.OrmoluCabalFileParsingFailed _ -> error "unreachable"
+          O.OrmoluMissingStdinInputFile -> error "unreachable"
       Left e -> e
 
     prettyAST t = case parseModule t of
       Left e -> showOrmoluException e
       Right (_, Left (srcSpan, msg)) ->
         show (srcSpan, msg)
-      Right (_, Right O.ParseResult {..}) ->
-        toText
-          . showSDocDump unsafeGlobalDynFlags
-          . Dump.showAstData Dump.NoBlankSrcSpan
-          $ prParsedSource
+      Right (_, Right snippets) ->
+        unlines . fmap printSnippet $ snippets
       where
         parseModule =
           unsafePerformIO
@@ -196,6 +195,14 @@ viewModel model@Model {..} =
             . O.parseModule configWithDeltas "<input>"
             . toString
         configWithDeltas = fmap (O.regionIndicesToDeltas (length (lines t))) config
+
+        printSnippet = \case
+          O.ParsedSnippet O.ParseResult {..} ->
+            toText
+              . showSDocDump unsafeGlobalDynFlags
+              . Dump.showAstData Dump.NoBlankSrcSpan
+              $ prParsedSource
+          O.RawSnippet r -> r
 
 extractOrmoluException :: SomeException -> Either Text O.OrmoluException
 extractOrmoluException = \case

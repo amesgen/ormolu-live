@@ -8,6 +8,8 @@ If you use nix, make sure to [set up the binary cache for haskell.nix](https://i
 
 ### Building the site with GHCJS
 
+*Note:* This fails due to a stack overflow error right now.
+
 ```
 nix-build -A website
 ```
@@ -22,7 +24,7 @@ In a `nix-shell` (or if you have cabal installed), run
 ghcid -r -W
 ```
 
-and open `http://localhost:8080` in a Chromium-based browser.
+and open `http://localhost:8080`.
 
 ## Acknowledgements
 

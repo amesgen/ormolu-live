@@ -1,6 +1,6 @@
 packages: .
 
-index-state: 2021-08-18T00:00:00Z
+index-state: 2021-10-08T00:00:00Z
 
 source-repository-package
   type: git
@@ -10,8 +10,9 @@ source-repository-package
   --sha256: 0qh07100qvxf0bh2rz64n21cz92wc1pj4niy3xs027l8xv52syz2
 source-repository-package
   type: git
-  location: https://github.com/dmjio/miso
-  tag: 339505587fd8576c7f89484d3a4244732a9f00e6
-  --sha256: 0a3lnjk516v8m0ih5x8cm7m1jqawlbilrlgkk897zfqygigi1c10
+  location: https://github.com/tek/jsaddle
+  tag: a63f53f6dda12ff3d5281b6a9ce50d6ee7759fd9
+  subdir: jsaddle jsaddle-warp
+  --sha256: 0ly2hd3vp94q9k8dn18z4wwsm3lbn6pjq087qkl8xhwqxygfgq0q
 
 allow-newer: jsaddle:lens
