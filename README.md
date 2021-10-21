@@ -1,3 +1,5 @@
+# This is now part of the Ormolu repository.
+
 # Ormolu Live
 
 Play around with [ormolu](https://github.com/tweag/ormolu) in the browser via GHCJS!
